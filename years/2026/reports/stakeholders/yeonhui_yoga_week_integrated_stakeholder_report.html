@@ -161,16 +161,15 @@
       vertical-align: top;
       line-height: 1.58;
       word-break: keep-all;
-      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
     }
     th { background: #f1f5ee; text-align: left; color: #2f3d35; }
     td:last-child, th:last-child { border-right: 0; }
-    td code { white-space: nowrap; }
-    main table:first-of-type th:nth-child(2),
-    main table:first-of-type td:nth-child(2),
-    main table:first-of-type th:nth-child(3),
-    main table:first-of-type td:nth-child(3) {
+    td code { overflow-wrap: anywhere; }
+    td.num, th.num {
+      text-align: right;
       white-space: nowrap;
+      font-variant-numeric: tabular-nums;
     }
     .responsibility-table th:nth-child(2),
     .responsibility-table td:nth-child(2),
@@ -224,6 +223,7 @@
       text-align: right;
     }
     tr:nth-child(even) td { background: #fbfcf8; }
+    tbody tr:hover td { background: var(--cream); }
     li {
       max-width: 760px;
       margin: 0.35rem 0;
@@ -311,121 +311,121 @@
 <p>모델 사용 내역을 숨기지 않는 이유는 투명성 때문이다. 다만 모델이 다르더라도 결과는 같은 스키마로 검증했고, 최종 분석 표에는 전건 Gemini Vision 구조화 검수가 완료된 상태만 반영했다.</p>
 <h2>7. 전체 규모 요약</h2>
 <div class="table-wrap"><table class="two-column-text-table">
-<thead><tr><th>항목</th><th>건수/행수</th></tr></thead>
+<thead><tr><th>항목</th><th class="num">건수/행수</th></tr></thead>
 <tbody>
-<tr><td>ON STUDIO 수업</td><td>125</td></tr>
-<tr><td>ON STUDIO 예약</td><td>1,611</td></tr>
-<tr><td>ON STUDIO 취소</td><td>1,048</td></tr>
-<tr><td>오붓 리뷰</td><td>96</td></tr>
-<tr><td>수업별 Hype 지표</td><td>83</td></tr>
-<tr><td>요가원별 Hype 지표</td><td>12</td></tr>
-<tr><td>수업별 정원+Hype 지표</td><td>83</td></tr>
-<tr><td>GIS 장소 노드</td><td>13</td></tr>
-<tr><td>GIS 거리 matrix</td><td>169</td></tr>
-<tr><td>GIS 수업 시간표</td><td>261</td></tr>
-<tr><td>GIS 같은 날 이동 가능성</td><td>167</td></tr>
-<tr><td>직접 확인된 외부 언급</td><td>60</td></tr>
-<tr><td>F&amp;B 협업 브랜드 후보</td><td>16</td></tr>
-<tr><td>스폰서 asset inventory</td><td>15</td></tr>
-<tr><td>오붓 정산 기준 참여 수</td><td>1,677</td></tr>
+<tr><td>ON STUDIO 수업</td><td class="num">125</td></tr>
+<tr><td>ON STUDIO 예약</td><td class="num">1,611</td></tr>
+<tr><td>ON STUDIO 취소</td><td class="num">1,048</td></tr>
+<tr><td>오붓 리뷰</td><td class="num">96</td></tr>
+<tr><td>수업별 Hype 지표</td><td class="num">83</td></tr>
+<tr><td>요가원별 Hype 지표</td><td class="num">12</td></tr>
+<tr><td>수업별 정원+Hype 지표</td><td class="num">83</td></tr>
+<tr><td>GIS 장소 노드</td><td class="num">13</td></tr>
+<tr><td>GIS 거리 matrix</td><td class="num">169</td></tr>
+<tr><td>GIS 수업 시간표</td><td class="num">261</td></tr>
+<tr><td>GIS 같은 날 이동 가능성</td><td class="num">167</td></tr>
+<tr><td>직접 확인된 외부 언급</td><td class="num">60</td></tr>
+<tr><td>F&amp;B 협업 브랜드 후보</td><td class="num">16</td></tr>
+<tr><td>스폰서 asset inventory</td><td class="num">15</td></tr>
+<tr><td>오붓 정산 기준 참여 수</td><td class="num">1,677</td></tr>
 </tbody></table></div>
 <h2>8. Hype 지수: 순위가 아니라 반응 프로필</h2>
 <p>Hype는 하나의 총점으로 요가원을 줄 세우기 위한 지표가 아니다. 예약 Hype, 리뷰 Hype, 만족 Hype, 재방문 Hype, 결제 Hype, 운영 안정성을 나누어 본다. 이렇게 해야 대형 수업의 규모감, 작은 수업의 깊이, 리뷰 밀도, 채움률, 취소 리스크가 서로 섞이지 않는다.</p>
 <h3>예약 규모 신호</h3>
 <div class="table-wrap"><table class="metrics-table">
-<thead><tr><th>요가원/장소</th><th>예약</th><th>리뷰</th><th>평균 별점</th><th>예약 Hype</th></tr></thead>
+<thead><tr><th>요가원/장소</th><th class="num">예약</th><th class="num">리뷰</th><th class="num">평균 별점</th><th class="num">예약 Hype</th></tr></thead>
 <tbody>
-<tr><td>연남장</td><td>348</td><td>12</td><td>4.83</td><td>95.83</td></tr>
-<tr><td>마이트리</td><td>292</td><td>13</td><td>4.89</td><td>79.17</td></tr>
-<tr><td>마인드플로우</td><td>270</td><td>13</td><td>4.95</td><td>87.50</td></tr>
-<tr><td>시이작</td><td>231</td><td>13</td><td>4.92</td><td>70.83</td></tr>
-<tr><td>빅블루요가</td><td>200</td><td>21</td><td>4.87</td><td>54.17</td></tr>
-<tr><td>대저택프라이빗</td><td>98</td><td>6</td><td>4.05</td><td>62.50</td></tr>
+<tr><td>연남장</td><td class="num">348</td><td class="num">12</td><td class="num">4.83</td><td class="num">95.83</td></tr>
+<tr><td>마이트리</td><td class="num">292</td><td class="num">13</td><td class="num">4.89</td><td class="num">79.17</td></tr>
+<tr><td>마인드플로우</td><td class="num">270</td><td class="num">13</td><td class="num">4.95</td><td class="num">87.50</td></tr>
+<tr><td>시이작</td><td class="num">231</td><td class="num">13</td><td class="num">4.92</td><td class="num">70.83</td></tr>
+<tr><td>빅블루요가</td><td class="num">200</td><td class="num">21</td><td class="num">4.87</td><td class="num">54.17</td></tr>
+<tr><td>대저택프라이빗</td><td class="num">98</td><td class="num">6</td><td class="num">4.05</td><td class="num">62.50</td></tr>
 </tbody></table></div>
 <p>예약 규모에서는 연남장, 마이트리, 마인드플로우, 시이작, 빅블루요가가 큰 축을 형성했다. 이 수치는 공간 수용력, 프로그램 수, 노출량, 시간표 배치가 함께 만든 결과이므로 단순한 브랜드 순위로 읽으면 안 된다.</p>
 <h3>리뷰 밀도 신호</h3>
 <div class="table-wrap"><table class="metrics-table">
-<thead><tr><th>요가원/장소</th><th>예약</th><th>리뷰</th><th>리뷰율</th><th>리뷰 Hype</th></tr></thead>
+<thead><tr><th>요가원/장소</th><th class="num">예약</th><th class="num">리뷰</th><th class="num">리뷰율</th><th class="num">리뷰 Hype</th></tr></thead>
 <tbody>
-<tr><td>연희정음</td><td>96</td><td>12</td><td>12.5%</td><td>77.08</td></tr>
-<tr><td>빅블루요가</td><td>200</td><td>21</td><td>10.5%</td><td>91.66</td></tr>
-<tr><td>너울너울</td><td>30</td><td>3</td><td>10.0%</td><td>56.25</td></tr>
-<tr><td>비전스트롤 콜라보</td><td>10</td><td>1</td><td>10.0%</td><td>47.91</td></tr>
-<tr><td>대저택프라이빗</td><td>98</td><td>6</td><td>6.1%</td><td>54.16</td></tr>
-<tr><td>시이작</td><td>231</td><td>13</td><td>5.6%</td><td>66.67</td></tr>
+<tr><td>연희정음</td><td class="num">96</td><td class="num">12</td><td class="num">12.5%</td><td class="num">77.08</td></tr>
+<tr><td>빅블루요가</td><td class="num">200</td><td class="num">21</td><td class="num">10.5%</td><td class="num">91.66</td></tr>
+<tr><td>너울너울</td><td class="num">30</td><td class="num">3</td><td class="num">10.0%</td><td class="num">56.25</td></tr>
+<tr><td>비전스트롤 콜라보</td><td class="num">10</td><td class="num">1</td><td class="num">10.0%</td><td class="num">47.91</td></tr>
+<tr><td>대저택프라이빗</td><td class="num">98</td><td class="num">6</td><td class="num">6.1%</td><td class="num">54.16</td></tr>
+<tr><td>시이작</td><td class="num">231</td><td class="num">13</td><td class="num">5.6%</td><td class="num">66.67</td></tr>
 </tbody></table></div>
 <p>리뷰 밀도에서는 연희정음과 빅블루요가가 강하게 보인다. 특히 빅블루요가는 예약 규모 대비 리뷰 반응이 높아, 수업 경험이 참가자의 언어로 남을 가능성이 컸던 축으로 해석할 수 있다.</p>
 <h3>만족 신호</h3>
 <div class="table-wrap"><table class="metrics-table">
-<thead><tr><th>요가원/장소</th><th>예약</th><th>리뷰</th><th>평균 별점</th><th>만족 Hype</th></tr></thead>
+<thead><tr><th>요가원/장소</th><th class="num">예약</th><th class="num">리뷰</th><th class="num">평균 별점</th><th class="num">만족 Hype</th></tr></thead>
 <tbody>
-<tr><td>숨명상센터</td><td>44</td><td>1</td><td>5.00</td><td>100.00</td></tr>
-<tr><td>너울너울</td><td>30</td><td>3</td><td>5.00</td><td>100.00</td></tr>
-<tr><td>비전스트롤 콜라보</td><td>10</td><td>1</td><td>5.00</td><td>100.00</td></tr>
-<tr><td>무릉</td><td>47</td><td>1</td><td>5.00</td><td>100.00</td></tr>
-<tr><td>마인드플로우</td><td>270</td><td>13</td><td>4.95</td><td>99.08</td></tr>
-<tr><td>시이작</td><td>231</td><td>13</td><td>4.92</td><td>98.46</td></tr>
+<tr><td>숨명상센터</td><td class="num">44</td><td class="num">1</td><td class="num">5.00</td><td class="num">100.00</td></tr>
+<tr><td>너울너울</td><td class="num">30</td><td class="num">3</td><td class="num">5.00</td><td class="num">100.00</td></tr>
+<tr><td>비전스트롤 콜라보</td><td class="num">10</td><td class="num">1</td><td class="num">5.00</td><td class="num">100.00</td></tr>
+<tr><td>무릉</td><td class="num">47</td><td class="num">1</td><td class="num">5.00</td><td class="num">100.00</td></tr>
+<tr><td>마인드플로우</td><td class="num">270</td><td class="num">13</td><td class="num">4.95</td><td class="num">99.08</td></tr>
+<tr><td>시이작</td><td class="num">231</td><td class="num">13</td><td class="num">4.92</td><td class="num">98.46</td></tr>
 </tbody></table></div>
 <p>만족 신호는 소규모 표본일수록 과대 해석을 피해야 한다. 다만 리뷰 수가 일정하게 확보된 마인드플로우, 시이작, 마이트리, 빅블루요가의 높은 만족 신호는 차기 수업 반복 후보를 판단할 때 유효한 근거가 된다.</p>
 <h2>9. 리뷰 분석: 참가자는 무엇을 기억했나</h2>
 <div class="table-wrap"><table class="two-column-text-table">
-<thead><tr><th>항목</th><th>값</th></tr></thead>
+<thead><tr><th>항목</th><th class="num">값</th></tr></thead>
 <tbody>
-<tr><td>전체 평균 별점</td><td>4.84</td></tr>
-<tr><td>수업 평균 별점</td><td>4.93</td></tr>
-<tr><td>분위기 평균 별점</td><td>4.85</td></tr>
-<tr><td>시설 평균 별점</td><td>4.73</td></tr>
-<tr><td>평균 방문 회차</td><td>2.56</td></tr>
+<tr><td>전체 평균 별점</td><td class="num">4.84</td></tr>
+<tr><td>수업 평균 별점</td><td class="num">4.93</td></tr>
+<tr><td>분위기 평균 별점</td><td class="num">4.85</td></tr>
+<tr><td>시설 평균 별점</td><td class="num">4.73</td></tr>
+<tr><td>평균 방문 회차</td><td class="num">2.56</td></tr>
 </tbody></table></div>
 <div class="table-wrap"><table class="two-column-text-table">
-<thead><tr><th>AI 태그</th><th>리뷰 건수</th></tr></thead>
+<thead><tr><th>AI 태그</th><th class="num">리뷰 건수</th></tr></thead>
 <tbody>
-<tr><td>강사</td><td>48</td></tr>
-<tr><td>공간</td><td>54</td></tr>
-<tr><td>분위기</td><td>79</td></tr>
-<tr><td>난이도</td><td>15</td></tr>
-<tr><td>회복감</td><td>45</td></tr>
-<tr><td>재참여 의향</td><td>43</td></tr>
+<tr><td>강사</td><td class="num">48</td></tr>
+<tr><td>공간</td><td class="num">54</td></tr>
+<tr><td>분위기</td><td class="num">79</td></tr>
+<tr><td>난이도</td><td class="num">15</td></tr>
+<tr><td>회복감</td><td class="num">45</td></tr>
+<tr><td>재참여 의향</td><td class="num">43</td></tr>
 </tbody></table></div>
 <p>리뷰 본문에서는 분위기, 공간, 강사, 회복감, 재참여 의향이 반복적으로 잡혔다. 즉 참가자는 단순히 운동량이나 난이도만 평가한 것이 아니라, 수업이 열린 공간, 선생님의 안내, 몸의 회복감, 축제 분위기를 함께 기억했다.</p>
 <p>리뷰가 많이 작성된 수업은 다음과 같다.</p>
 <div class="table-wrap"><table class="class-list-table three-column-text-table">
-<thead><tr><th>요가원/장소</th><th>수업</th><th>리뷰</th></tr></thead>
+<thead><tr><th>요가원/장소</th><th>수업</th><th class="num">리뷰</th></tr></thead>
 <tbody>
-<tr><td>빅블루요가</td><td>[빅블루요가] 정렬 에센스</td><td>9</td></tr>
-<tr><td>마인드플로우</td><td>[마인드플로우] 빈야사요가</td><td>6</td></tr>
-<tr><td>빅블루요가</td><td>[빅블루요가] 호흡 리커버리</td><td>5</td></tr>
-<tr><td>연남장</td><td>[연남장|커뮤니티허브] 처음이라 좋은 아쉬탕가 with 베지어트</td><td>5</td></tr>
-<tr><td>시이작</td><td>[시이작] 땀나는 하타</td><td>4</td></tr>
-<tr><td>너울너울</td><td>[너울너울] 소매틱뮤직 &#x27;Handpan Doodle&#x27;</td><td>3</td></tr>
-<tr><td>마이트리</td><td>[마이트리|연희스페셜] 올레벨 빈야사</td><td>3</td></tr>
-<tr><td>마인드플로우</td><td>[마인드플로우] 비기너요가</td><td>3</td></tr>
-<tr><td>연희정음</td><td>[연희정음|랜드마크] 핸드팬에 잠기는 저녁 요가 명상 with 칼레트</td><td>3</td></tr>
-<tr><td>빅블루요가</td><td>[빅블루요가] 후굴의 정렬</td><td>3</td></tr>
+<tr><td>빅블루요가</td><td>[빅블루요가] 정렬 에센스</td><td class="num">9</td></tr>
+<tr><td>마인드플로우</td><td>[마인드플로우] 빈야사요가</td><td class="num">6</td></tr>
+<tr><td>빅블루요가</td><td>[빅블루요가] 호흡 리커버리</td><td class="num">5</td></tr>
+<tr><td>연남장</td><td>[연남장|커뮤니티허브] 처음이라 좋은 아쉬탕가 with 베지어트</td><td class="num">5</td></tr>
+<tr><td>시이작</td><td>[시이작] 땀나는 하타</td><td class="num">4</td></tr>
+<tr><td>너울너울</td><td>[너울너울] 소매틱뮤직 &#x27;Handpan Doodle&#x27;</td><td class="num">3</td></tr>
+<tr><td>마이트리</td><td>[마이트리|연희스페셜] 올레벨 빈야사</td><td class="num">3</td></tr>
+<tr><td>마인드플로우</td><td>[마인드플로우] 비기너요가</td><td class="num">3</td></tr>
+<tr><td>연희정음</td><td>[연희정음|랜드마크] 핸드팬에 잠기는 저녁 요가 명상 with 칼레트</td><td class="num">3</td></tr>
+<tr><td>빅블루요가</td><td>[빅블루요가] 후굴의 정렬</td><td class="num">3</td></tr>
 </tbody></table></div>
 <h2>10. 정원과 채움률: 무엇을 반복하거나 확장할 수 있나</h2>
 <p>정원 분석은 Google Drive 기획표보다 ON STUDIO 캘린더 복사 자료를 우선했다. 이유는 Google Drive 자료가 기획 중간 산출물일 수 있는 반면, ON STUDIO 캘린더는 실제 운영 화면의 예약수/정원 상태를 반영하기 때문이다.</p>
 <div class="table-wrap"><table class="two-column-text-table">
-<thead><tr><th>구분</th><th>수업 수</th></tr></thead>
+<thead><tr><th>구분</th><th class="num">수업 수</th></tr></thead>
 <tbody>
-<tr><td>확장 또는 반복 후보</td><td>31</td></tr>
-<tr><td>소규모 정원 또는 틈새 강점 후보</td><td>23</td></tr>
-<tr><td>안정적 중간층</td><td>22</td></tr>
-<tr><td>수요 개발 후보</td><td>7</td></tr>
-<tr><td>메시지/시간표 재검토 후보</td><td>0</td></tr>
+<tr><td>확장 또는 반복 후보</td><td class="num">31</td></tr>
+<tr><td>소규모 정원 또는 틈새 강점 후보</td><td class="num">23</td></tr>
+<tr><td>안정적 중간층</td><td class="num">22</td></tr>
+<tr><td>수요 개발 후보</td><td class="num">7</td></tr>
+<tr><td>메시지/시간표 재검토 후보</td><td class="num">0</td></tr>
 </tbody></table></div>
 <p>요가원/장소별 채움률 상위 신호는 다음과 같다.</p>
 <div class="table-wrap"><table class="metrics-table">
-<thead><tr><th>요가원/장소</th><th>예약</th><th>리뷰</th><th>가중 채움률</th><th>만석 세션</th><th>세션 수</th><th>확장 후보</th></tr></thead>
+<thead><tr><th>요가원/장소</th><th class="num">예약</th><th class="num">리뷰</th><th class="num">가중 채움률</th><th class="num">만석 세션</th><th class="num">세션 수</th><th class="num">확장 후보</th></tr></thead>
 <tbody>
-<tr><td>대저택프라이빗</td><td>98</td><td>6</td><td>100.0%</td><td>11</td><td>11</td><td>3</td></tr>
-<tr><td>비전스트롤 콜라보</td><td>10</td><td>1</td><td>100.0%</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>빅블루요가</td><td>200</td><td>21</td><td>93.0%</td><td>25</td><td>33</td><td>6</td></tr>
-<tr><td>무릉</td><td>47</td><td>1</td><td>90.0%</td><td>8</td><td>10</td><td>1</td></tr>
-<tr><td>시이작</td><td>231</td><td>13</td><td>88.8%</td><td>41</td><td>55</td><td>4</td></tr>
-<tr><td>연남장</td><td>348</td><td>12</td><td>87.4%</td><td>8</td><td>16</td><td>8</td></tr>
-<tr><td>데이스타콜라보</td><td>11</td><td>0</td><td>84.6%</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>마이트리</td><td>292</td><td>13</td><td>78.3%</td><td>30</td><td>60</td><td>5</td></tr>
+<tr><td>대저택프라이빗</td><td class="num">98</td><td class="num">6</td><td class="num">100.0%</td><td class="num">11</td><td class="num">11</td><td class="num">3</td></tr>
+<tr><td>비전스트롤 콜라보</td><td class="num">10</td><td class="num">1</td><td class="num">100.0%</td><td class="num">1</td><td class="num">1</td><td class="num">0</td></tr>
+<tr><td>빅블루요가</td><td class="num">200</td><td class="num">21</td><td class="num">93.0%</td><td class="num">25</td><td class="num">33</td><td class="num">6</td></tr>
+<tr><td>무릉</td><td class="num">47</td><td class="num">1</td><td class="num">90.0%</td><td class="num">8</td><td class="num">10</td><td class="num">1</td></tr>
+<tr><td>시이작</td><td class="num">231</td><td class="num">13</td><td class="num">88.8%</td><td class="num">41</td><td class="num">55</td><td class="num">4</td></tr>
+<tr><td>연남장</td><td class="num">348</td><td class="num">12</td><td class="num">87.4%</td><td class="num">8</td><td class="num">16</td><td class="num">8</td></tr>
+<tr><td>데이스타콜라보</td><td class="num">11</td><td class="num">0</td><td class="num">84.6%</td><td class="num">0</td><td class="num">1</td><td class="num">0</td></tr>
+<tr><td>마이트리</td><td class="num">292</td><td class="num">13</td><td class="num">78.3%</td><td class="num">30</td><td class="num">60</td><td class="num">5</td></tr>
 </tbody></table></div>
 <p>채움률은 차기 회차에서 바로 운영 의사결정으로 연결된다. 만석이 반복된 수업은 정원 확대, 회차 추가, 더 큰 공간 배치, 보조 강사 투입을 검토할 수 있다. 반대로 좋은 리뷰가 있는데 예약이 낮은 수업은 제목, 설명, 시간대, 위치 안내를 다시 다듬는 쪽이 적합하다.</p>
 <h2>11. GIS 분석: 걸어서 이어지는 축제인가</h2>
@@ -455,16 +455,16 @@
 </tbody></table></div>
 <p>장소쌍 이동 집계 상위는 다음과 같다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>출발</th><th>도착</th><th>판정</th><th>이동 후보</th><th>평균 여유</th><th>평균 도보</th></tr></thead>
+<thead><tr><th>출발</th><th>도착</th><th>판정</th><th class="num">이동 후보</th><th class="num">평균 여유</th><th class="num">평균 도보</th></tr></thead>
 <tbody>
-<tr><td>연남장</td><td>연남장</td><td>여유 있음</td><td>39</td><td>98.46분</td><td>0.00분</td></tr>
-<tr><td>연희정음</td><td>연남장</td><td>여유 있음</td><td>13</td><td>163.08분</td><td>5.02분</td></tr>
-<tr><td>마이트리</td><td>마이트리</td><td>여유 있음</td><td>11</td><td>71.82분</td><td>0.00분</td></tr>
-<tr><td>빅블루요가</td><td>마이트리</td><td>여유 있음</td><td>7</td><td>180.00분</td><td>6.08분</td></tr>
-<tr><td>시이작</td><td>마인드플로우</td><td>여유 있음</td><td>5</td><td>249.00분</td><td>16.80분</td></tr>
-<tr><td>연남장</td><td>바운드하우스</td><td>여유 있음</td><td>5</td><td>132.00분</td><td>12.14분</td></tr>
-<tr><td>마이트리</td><td>시이작</td><td>여유 있음</td><td>5</td><td>297.00분</td><td>4.33분</td></tr>
-<tr><td>무릉</td><td>연남장</td><td>여유 있음</td><td>5</td><td>174.00분</td><td>10.03분</td></tr>
+<tr><td>연남장</td><td>연남장</td><td>여유 있음</td><td class="num">39</td><td class="num">98.46분</td><td class="num">0.00분</td></tr>
+<tr><td>연희정음</td><td>연남장</td><td>여유 있음</td><td class="num">13</td><td class="num">163.08분</td><td class="num">5.02분</td></tr>
+<tr><td>마이트리</td><td>마이트리</td><td>여유 있음</td><td class="num">11</td><td class="num">71.82분</td><td class="num">0.00분</td></tr>
+<tr><td>빅블루요가</td><td>마이트리</td><td>여유 있음</td><td class="num">7</td><td class="num">180.00분</td><td class="num">6.08분</td></tr>
+<tr><td>시이작</td><td>마인드플로우</td><td>여유 있음</td><td class="num">5</td><td class="num">249.00분</td><td class="num">16.80분</td></tr>
+<tr><td>연남장</td><td>바운드하우스</td><td>여유 있음</td><td class="num">5</td><td class="num">132.00분</td><td class="num">12.14분</td></tr>
+<tr><td>마이트리</td><td>시이작</td><td>여유 있음</td><td class="num">5</td><td class="num">297.00분</td><td class="num">4.33분</td></tr>
+<tr><td>무릉</td><td>연남장</td><td>여유 있음</td><td class="num">5</td><td class="num">174.00분</td><td class="num">10.03분</td></tr>
 </tbody></table></div>
 <h2>12. Viral 분석: 외부 웹에서는 어떻게 보였나</h2>
 <p>외부 확산 지표는 Hype에 합산하지 않았다. Hype가 행사 내부의 예약, 리뷰, 만족, 결제 반응이라면, 외부 확산은 네이버 블로그와 유튜브 같은 공개 웹에서 축제가 어떻게 언급되었는지를 보는 별도 축이다.</p>
@@ -479,25 +479,25 @@
 <tr><td>기간</td><td>2026-03-20 ~ 2026-05-16</td></tr>
 </tbody></table></div>
 <div class="table-wrap"><table>
-<thead><tr><th>요가원/장소</th><th>직접 확인 언급</th><th>외부 확산 신호</th><th>첫 게시일</th><th>마지막 게시일</th></tr></thead>
+<thead><tr><th>요가원/장소</th><th class="num">직접 확인 언급</th><th class="num">외부 확산 신호</th><th class="num">첫 게시일</th><th class="num">마지막 게시일</th></tr></thead>
 <tbody>
-<tr><td>연희정음</td><td>12</td><td>82.75</td><td>2026-03-31</td><td>2026-04-30</td></tr>
-<tr><td>마인드플로우</td><td>12</td><td>76.50</td><td>2026-03-20</td><td>2026-05-07</td></tr>
-<tr><td>시이작</td><td>8</td><td>71.25</td><td>2026-04-08</td><td>2026-05-08</td></tr>
-<tr><td>숨명상센터</td><td>8</td><td>58.75</td><td>2026-04-02</td><td>2026-04-28</td></tr>
-<tr><td>연남장</td><td>5</td><td>56.25</td><td>2026-04-08</td><td>2026-05-04</td></tr>
-<tr><td>빅블루요가</td><td>7</td><td>55.75</td><td>2026-04-15</td><td>2026-05-13</td></tr>
-<tr><td>마이트리</td><td>4</td><td>46.75</td><td>2026-04-08</td><td>2026-05-14</td></tr>
-<tr><td>너울너울</td><td>1</td><td>39.00</td><td>2026-04-24</td><td>2026-04-24</td></tr>
+<tr><td>연희정음</td><td class="num">12</td><td class="num">82.75</td><td class="num">2026-03-31</td><td class="num">2026-04-30</td></tr>
+<tr><td>마인드플로우</td><td class="num">12</td><td class="num">76.50</td><td class="num">2026-03-20</td><td class="num">2026-05-07</td></tr>
+<tr><td>시이작</td><td class="num">8</td><td class="num">71.25</td><td class="num">2026-04-08</td><td class="num">2026-05-08</td></tr>
+<tr><td>숨명상센터</td><td class="num">8</td><td class="num">58.75</td><td class="num">2026-04-02</td><td class="num">2026-04-28</td></tr>
+<tr><td>연남장</td><td class="num">5</td><td class="num">56.25</td><td class="num">2026-04-08</td><td class="num">2026-05-04</td></tr>
+<tr><td>빅블루요가</td><td class="num">7</td><td class="num">55.75</td><td class="num">2026-04-15</td><td class="num">2026-05-13</td></tr>
+<tr><td>마이트리</td><td class="num">4</td><td class="num">46.75</td><td class="num">2026-04-08</td><td class="num">2026-05-14</td></tr>
+<tr><td>너울너울</td><td class="num">1</td><td class="num">39.00</td><td class="num">2026-04-24</td><td class="num">2026-04-24</td></tr>
 </tbody></table></div>
 <p>외부 확산은 네이버 블로그 중심으로 발생했고, 연희정음, 마인드플로우, 시이작, 숨명상센터, 연남장, 빅블루요가 등이 반복적으로 언급되었다. 차기에는 공식 해시태그, 자발 리뷰 제출 이벤트, 플랫폼별 리뷰 수집 동의 절차를 미리 설계하면 훨씬 더 신뢰도 높은 외부 확산 분석이 가능하다.</p>
 <h2>13. F&amp;B와 스폰서십: 물품 제공을 넘어 동선 설계로</h2>
 <div class="table-wrap"><table class="two-column-text-table">
-<thead><tr><th>항목</th><th>값</th></tr></thead>
+<thead><tr><th>항목</th><th class="num">값</th></tr></thead>
 <tbody>
-<tr><td>F&amp;B 협업 브랜드 후보</td><td>16</td></tr>
-<tr><td>스폰서 asset inventory</td><td>15</td></tr>
-<tr><td>Google Drive 분석 기회 축</td><td>5</td></tr>
+<tr><td>F&amp;B 협업 브랜드 후보</td><td class="num">16</td></tr>
+<tr><td>스폰서 asset inventory</td><td class="num">15</td></tr>
+<tr><td>Google Drive 분석 기회 축</td><td class="num">5</td></tr>
 </tbody></table></div>
 <p>F&amp;B와 스폰서십은 단순히 과자나 음료를 제공했다는 사실보다, 참가자가 수업 전후로 어디를 걷고 어떤 브랜드를 만났는지와 연결될 때 가치가 커진다. 다음 회차에서는 쿠폰 코드, QR 인증, 수업 테마별 브랜드 매칭, F&amp;B 루트 안내를 미리 설계해 스폰서에게 측정 가능한 결과를 제공하는 것이 좋다.</p>
 <p>Google Drive 자료에서 확인된 추가 분석 기회는 다음과 같다.</p>
@@ -514,23 +514,23 @@
 <p>정산 공개본은 최종 정산액을 제시하는 자료가 아니라, 참여 기준과 산식 검토를 위한 자료다. 실제 최종 정산액은 공식 정산서 또는 주최 측 확정 자료를 기준으로 별도 관리한다.</p>
 <p>이번 보정에서는 ON STUDIO 활성 예약 파일의 <code>people_count</code>를 기준 참여 수로 보았다. 취소 파일은 수요 변동과 취소 이력 분석용으로만 보관하고, 활성 예약에서 다시 차감하지 않는다. 또한 장소명만 보지 않고 실제 정산 담당 주체를 별도 <code>settlement_owner_key</code>로 묶어 빅블루 담당 수업이 다른 장소에서 열린 경우도 누락되지 않게 했다.</p>
 <div class="table-wrap"><table class="two-column-text-table">
-<thead><tr><th>항목</th><th>값</th></tr></thead>
+<thead><tr><th>항목</th><th class="num">값</th></tr></thead>
 <tbody>
-<tr><td>기준 1회권 참여 수</td><td>589</td></tr>
-<tr><td>기준 패스권 참여 수</td><td>1,088</td></tr>
-<tr><td>전체 기준 참여 수</td><td>1,677</td></tr>
+<tr><td>기준 1회권 참여 수</td><td class="num">589</td></tr>
+<tr><td>기준 패스권 참여 수</td><td class="num">1,088</td></tr>
+<tr><td>전체 기준 참여 수</td><td class="num">1,677</td></tr>
 </tbody></table></div>
 <div class="table-wrap"><table>
-<thead><tr><th>월</th><th>정산 주체</th><th>개최 장소</th><th>1회권 참여</th><th>패스 참여</th><th>패스 가중 정산률</th><th>총 기준 참여</th></tr></thead>
+<thead><tr><th>월</th><th>정산 주체</th><th>개최 장소</th><th class="num">1회권 참여</th><th class="num">패스 참여</th><th class="num">패스 가중 정산률</th><th class="num">총 기준 참여</th></tr></thead>
 <tbody>
-<tr><td>2026-05</td><td>연남장</td><td>연남장</td><td>102</td><td>114</td><td>74.8%</td><td>216</td></tr>
-<tr><td>2026-05</td><td>마이트리</td><td>마이트리</td><td>76</td><td>107</td><td>74.5%</td><td>183</td></tr>
-<tr><td>2026-04</td><td>마인드플로우</td><td>마인드플로우</td><td>49</td><td>88</td><td>74.7%</td><td>137</td></tr>
-<tr><td>2026-05</td><td>마인드플로우</td><td>마인드플로우</td><td>64</td><td>69</td><td>75.0%</td><td>133</td></tr>
-<tr><td>2026-04</td><td>연남장</td><td>연남장</td><td>59</td><td>73</td><td>74.6%</td><td>132</td></tr>
-<tr><td>2026-04</td><td>시이작</td><td>시이작</td><td>46</td><td>81</td><td>74.6%</td><td>127</td></tr>
-<tr><td>2026-04</td><td>빅블루요가</td><td>빅블루요가; 연희정음</td><td>26</td><td>84</td><td>74.2%</td><td>110</td></tr>
-<tr><td>2026-04</td><td>마이트리</td><td>마이트리</td><td>21</td><td>88</td><td>74.8%</td><td>109</td></tr>
+<tr><td>2026-05</td><td>연남장</td><td>연남장</td><td class="num">102</td><td class="num">114</td><td class="num">74.8%</td><td class="num">216</td></tr>
+<tr><td>2026-05</td><td>마이트리</td><td>마이트리</td><td class="num">76</td><td class="num">107</td><td class="num">74.5%</td><td class="num">183</td></tr>
+<tr><td>2026-04</td><td>마인드플로우</td><td>마인드플로우</td><td class="num">49</td><td class="num">88</td><td class="num">74.7%</td><td class="num">137</td></tr>
+<tr><td>2026-05</td><td>마인드플로우</td><td>마인드플로우</td><td class="num">64</td><td class="num">69</td><td class="num">75.0%</td><td class="num">133</td></tr>
+<tr><td>2026-04</td><td>연남장</td><td>연남장</td><td class="num">59</td><td class="num">73</td><td class="num">74.6%</td><td class="num">132</td></tr>
+<tr><td>2026-04</td><td>시이작</td><td>시이작</td><td class="num">46</td><td class="num">81</td><td class="num">74.6%</td><td class="num">127</td></tr>
+<tr><td>2026-04</td><td>빅블루요가</td><td>빅블루요가; 연희정음</td><td class="num">26</td><td class="num">84</td><td class="num">74.2%</td><td class="num">110</td></tr>
+<tr><td>2026-04</td><td>마이트리</td><td>마이트리</td><td class="num">21</td><td class="num">88</td><td class="num">74.8%</td><td class="num">109</td></tr>
 </tbody></table></div>
 <h2>15. 이해관계자별 제안</h2>
 <div class="table-wrap"><table class="two-column-text-table">

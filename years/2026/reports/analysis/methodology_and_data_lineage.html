@@ -161,16 +161,15 @@
       vertical-align: top;
       line-height: 1.58;
       word-break: keep-all;
-      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
     }
     th { background: #f1f5ee; text-align: left; color: #2f3d35; }
     td:last-child, th:last-child { border-right: 0; }
-    td code { white-space: nowrap; }
-    main table:first-of-type th:nth-child(2),
-    main table:first-of-type td:nth-child(2),
-    main table:first-of-type th:nth-child(3),
-    main table:first-of-type td:nth-child(3) {
+    td code { overflow-wrap: anywhere; }
+    td.num, th.num {
+      text-align: right;
       white-space: nowrap;
+      font-variant-numeric: tabular-nums;
     }
     .responsibility-table th:nth-child(2),
     .responsibility-table td:nth-child(2),
@@ -224,6 +223,7 @@
       text-align: right;
     }
     tr:nth-child(even) td { background: #fbfcf8; }
+    tbody tr:hover td { background: var(--cream); }
     li {
       max-width: 760px;
       margin: 0.35rem 0;
